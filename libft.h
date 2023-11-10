@@ -41,7 +41,7 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_atoi(const char *nptr);
 
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, char *src, unsigned int size);
 

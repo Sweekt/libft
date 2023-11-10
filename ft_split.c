@@ -64,8 +64,9 @@ char	*ft_strldup(char const *s, char c, size_t *j)
 
 void	*ft_splitdestroy(char **split)
 {
-	size_t i;
+	size_t	i;
 
+	i = 0;
 	while (split[i] != NULL)
 	{
 		free(split[i]);
@@ -88,7 +89,7 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	words = ft_countwords(s, c);
 	split = ft_calloc((words + 1), sizeof(char *));
-	if (split == NULL)
+	if (!s[0] || split == NULL)
 		return (split);
 	while (i < words)
 	{
@@ -103,6 +104,7 @@ char	**ft_split(char const *s, char c)
 	}
 	return (split);
 }
+
 /*
 #include <unistd.h>
 #include <stdio.h>
@@ -110,7 +112,6 @@ char	**ft_split(char const *s, char c)
 int	main(int argc, char **argv)
 {
 	char **split;
-	char **split2;
 	int	i;
 
 	if (argc < 3)
@@ -122,4 +123,5 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	return (0);
-}*/
+}
+*/

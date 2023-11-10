@@ -55,7 +55,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 
 	istart = 0;
-	iend = ft_strlen((char *)s1) - 1;
+	iend = ft_strlen((char *)s1);
 	while (s1[istart])
 	{
 		if (ft_ischarset(s1[istart], set) == 0)
@@ -64,10 +64,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	while (iend > istart)
 	{
-		if (ft_ischarset(s1[iend], set) == 0)
+		if (ft_ischarset(s1[iend - 1], set) == 0)
 			break ;
 		iend--;
 	}
-	str = ft_strldup((char *)s1 + istart, iend + 1 - istart);
+	str = ft_strldup((char *)s1 + istart, iend - istart);
 	return (str);
 }
