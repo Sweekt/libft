@@ -6,7 +6,7 @@
 /*   By: beroy <beroy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:57:13 by beroy             #+#    #+#             */
-/*   Updated: 2023/11/13 10:56:08 by beroy            ###   ########.fr       */
+/*   Updated: 2023/11/13 13:21:53 by beroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,15 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 char	**ft_split(char const *s, char c);
 
+// BONUS
+
 t_list	*ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
 
 int		ft_lstsize(t_list *lst);
 
 void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
 #endif

@@ -36,7 +36,9 @@ SOURCES =	ft_isalpha.c	\
 BONUS	=	ft_lstnew.c		\
 			ft_lstadd_front.c\
 			ft_lstsize.c	\
-			ft_lstlast.c
+			ft_lstlast.c	\
+			ft_listadd_back.c\
+			ft_lstdelone.c
 
 OBJECTS = ${SOURCES:.c=.o}
 B_OBJECTS = ${BONUS:.c=.o}
