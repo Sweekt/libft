@@ -33,7 +33,13 @@ SOURCES =	ft_isalpha.c	\
          	ft_putendl_fd.c	\
          	ft_putnbr_fd.c
 
+BONUS	=	ft_lstnew.c		\
+			ft_lstadd_front.c\
+			ft_lstsize.c	\
+			ft_lstlast.c
+
 OBJECTS = ${SOURCES:.c=.o}
+B_OBJECTS = ${BONUS:.c=.o}
 HEADER_FILE = ./libft.h
 NAME = libft.a
 CC = cc
@@ -45,14 +51,19 @@ FLAGS =  -Wall -Wextra -Werror
 ${NAME}:	${OBJECTS}
 	ar -rc ${NAME} ${OBJECTS}
 
+${B_NAME}:	${OBJECTS} ${B_OBJECTS}
+	ar -rc ${B_NAME} ${OBJECTS} ${B_OBJECTS}
+
 all: ${NAME}
 
+bonus: ${B_NAME}
+
 clean:
-	rm -f ${OBJECTS}
+	rm -f ${OBJECTS} ${B_OBJECTS}
 
 fclean: clean
 	rm -f ${NAME}
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re

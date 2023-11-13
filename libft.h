@@ -6,7 +6,7 @@
 /*   By: beroy <beroy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:57:13 by beroy             #+#    #+#             */
-/*   Updated: 2023/11/09 12:24:01 by beroy            ###   ########.fr       */
+/*   Updated: 2023/11/13 10:56:08 by beroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 void	ft_bzero(void *s, size_t n);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
@@ -56,5 +62,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 char	**ft_split(char const *s, char c);
+
+t_list	*ft_lstnew(void *content);
+
+int		ft_lstsize(t_list *lst);
+
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif
