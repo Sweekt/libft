@@ -6,7 +6,7 @@
 /*   By: beroy <beroy@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:27:55 by beroy             #+#    #+#             */
-/*   Updated: 2023/11/10 11:03:51 by beroy            ###   ########.fr       */
+/*   Updated: 2023/11/14 13:50:14 by beroy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_countwords(char const *s, char c)
 
 	words = 0;
 	i = 0;
-	if (s[i] != c)
+	if (s[i] != c && s[i] != 0)
 		words++;
 	i++;
 	while (s[0] && s[i])
@@ -104,24 +104,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (split);
 }
-
-/*
-#include <unistd.h>
-#include <stdio.h>
-
-int	main(int argc, char **argv)
-{
-	char **split;
-	int	i;
-
-	if (argc < 3)
-		return (0);
-	split = ft_split(argv[1], argv[2][0]);
-	while (split[i])
-	{
-		printf("%s\n", split[i]);
-		i++;
-	}
-	return (0);
-}
-*/
