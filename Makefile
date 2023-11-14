@@ -33,15 +33,15 @@ SOURCES =	ft_isalpha.c	\
          	ft_putendl_fd.c	\
          	ft_putnbr_fd.c
 
-BONUS	=	ft_lstnew.c		\
-			ft_lstadd_front.c\
-			ft_lstsize.c	\
-			ft_lstlast.c	\
-			ft_listadd_back.c\
+BONUS	=	ft_lstnew.c			\
+			ft_lstadd_front.c	\
+			ft_lstsize.c		\
+			ft_lstlast.c		\
+			ft_lstadd_back.c	\
 			ft_lstdelone.c
 
 OBJECTS = ${SOURCES:.c=.o}
-B_OBJECTS = ${BONUS:.c=.o}
+B_OBJECTS = ${SOURCES:.c=.o} ${BONUS:.c=.o}
 HEADER_FILE = ./libft.h
 NAME = libft.a
 CC = cc
@@ -53,12 +53,10 @@ FLAGS =  -Wall -Wextra -Werror
 ${NAME}:	${OBJECTS}
 	ar -rc ${NAME} ${OBJECTS}
 
-${B_NAME}:	${OBJECTS} ${B_OBJECTS}
-	ar -rc ${B_NAME} ${OBJECTS} ${B_OBJECTS}
-
 all: ${NAME}
 
-bonus: ${B_NAME}
+bonus:  ${B_OBJECTS}
+	ar -rc ${NAME} ${B_OBJECTS}
 
 clean:
 	rm -f ${OBJECTS} ${B_OBJECTS}

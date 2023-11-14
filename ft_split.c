@@ -41,7 +41,7 @@ size_t	ft_wdlen(char const *s, char c, size_t j)
 	return (i);
 }
 
-char	*ft_strldup(char const *s, char c, size_t *j)
+char	*ft_superdup(char const *s, char c, size_t *j)
 {
 	char	*str;
 	size_t	len;
@@ -95,7 +95,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[j] != c)
 		{
-			split[i++] = ft_strldup(s, c, &j);
+			split[i++] = ft_superdup(s, c, &j);
 			if (split[i - 1] == NULL)
 				return (ft_splitdestroy(split));
 		}
