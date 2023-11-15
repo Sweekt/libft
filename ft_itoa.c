@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_strfill(long int n, char *str, long int *i)
+static void	ft_strfill(long int n, char *str, long int *i)
 {
 	if (n < 0)
 	{
@@ -32,7 +32,7 @@ void	ft_strfill(long int n, char *str, long int *i)
 	}
 }
 
-void	ft_strsize(long int n, long int *size)
+static void	ft_strsize(long int n, long int *size)
 {
 	if (n < 0)
 	{
@@ -64,14 +64,3 @@ char	*ft_itoa(int n)
 	str[i] = 0;
 	return (str);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-	char *str;
-
-	str = ft_itoa(100003004);
-	printf("%s\n", str);
-	return (0);
-}*/

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_ischarset(char c, char const *set)
+static size_t	ft_ischarset(char c, char const *set)
 {
 	size_t	i;
 	size_t	chk;
@@ -30,7 +30,7 @@ size_t	ft_ischarset(char c, char const *set)
 	return (1);
 }
 
-char	*ft_strldup(char *s1, size_t len)
+static char	*ft_strldup(char *s1, size_t len)
 {
 	size_t	i;
 	char	*str;
